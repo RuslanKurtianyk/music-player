@@ -1,15 +1,20 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-content>
       <v-container>
-        <!-- content -->
+        <player-title-bar></player-title-bar>
       </v-container>
     </v-content>
   </v-app>
 </template>
  
 <script>
+import PlayerTitleBar from './components/PlayerTitleBar.vue'
+
   export default {
+    components: {
+      PlayerTitleBar
+    },
     data () {
       return {
  
