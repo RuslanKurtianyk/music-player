@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "core-js": "^3.4.4",
-    "vue": "^2.6.10"
+    "howler": "^2.1.3",
+    "vue": "^2.6.10",
+    "vuetify": "^2.2.21"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",
