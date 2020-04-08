@@ -1,8 +1,11 @@
 import Vue from 'vue'
-import App from './App.vue'
-
-Vue.config.productionTip = false
-
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.css'
+import Player from './Player.vue'
+ 
+Vue.use(Vuetify)
+ 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+  el: '#app',
+  render: h => h(Player)
+})
