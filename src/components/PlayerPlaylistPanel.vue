@@ -6,10 +6,10 @@
         :key="track.title"
         v-show="track.display">
         <v-list-item-content>
-          <v-list-item-title>{{ index }} {{ track.artist }} - {{ track.title }}</v-list-item-title>
+          <v-list-item-title>{{ index | numbers }} {{ track.artist }} - {{ track.title }}</v-list-item-title>
         </v-list-item-content>
         <v-spacer></v-spacer>
-        {{ track.howl.duration() }}
+        {{ track.howl.duration() | minutes }}
       </v-list-item>
     </v-list>
   </v-card>

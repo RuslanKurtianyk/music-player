@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import 'vuetify/dist/vuetify.css'
+import vuetify from './plugins/vuetify'
 import Player from './Player.vue'
-import vuetify from './plugins/vuetify';
+import './utils/filters'
 
 new Vue({
   el: '#app',
