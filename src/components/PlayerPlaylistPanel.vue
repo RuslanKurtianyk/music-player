@@ -5,7 +5,8 @@
         v-for="(track, index) in playlist"
         :key="track.title"
         v-show="track.display"
-        :class="[{selected: track === selectedTrack}, {even: index % 2 == 0}]">
+        :class="[{selected: track === selectedTrack}, {even: index % 2 == 0}]"
+        @dblclick="playTrack()">
         <v-list-item-content @click="selectTrack(track)">
           <v-list-item-title>{{ index | numbers }} {{ track.artist }} - {{ track.title }}</v-list-item-title>
         </v-list-item-content>
@@ -25,6 +26,9 @@
     methods: {
       selectTrack (track) {
         this.$emit('selecttrack', track)
+      },
+      playTrack(index) {
+        this.$emit('playtrack', index)
       }
     }
   }
