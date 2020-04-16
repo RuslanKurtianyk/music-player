@@ -3,7 +3,11 @@
     <v-content>
       <v-container>
         <player-title-bar></player-title-bar>
-        <player-playlist-panel :playlist="playlist"></player-playlist-panel>
+        <player-playlist-panel
+          :playlist="playlist"
+          :selectedTrack="selectedTrack"
+          @selecttrack="selectTrack">
+        </player-playlist-panel>
       </v-container>
     </v-content>
   </v-app>
@@ -23,9 +27,15 @@ import { Howl } from 'howler'
       return {
         playlist: [
           {title: 'Creeping Death', artist: 'Metallica', howl: null, display: true},
-          {title: 'Don\'t stop the party', artist: 'Black Eyed Peas', howl: null, display: true},
+          {title: 'Don\'t Stop The Party', artist: 'Black Eyed Peas', howl: null, display: true},
           {title: 'My Humps', artist: 'Black Eyed Peas', howl: null, display: true},
-        ]
+        ],
+        selectedTrack: null
+      }
+    },
+    methods: {
+      selectTrack (track) {
+        this.selectedTrack = track
       }
     },
     created: function() {
@@ -34,6 +44,8 @@ import { Howl } from 'howler'
         track.howl = new Howl({
           src: [`./playlist/${file}.mp3`]
         })
+        // eslint-disable-next-line no-console
+        console.log(track.howl);
       })
     }
   }
